@@ -6,6 +6,7 @@
 0x3	OCG&TCG
 0x4	Anime/DIY
 ##attribute
+-1	custom
 0x0	Attribute
 0x1	EARTH
 0x2	WATER
@@ -14,7 +15,9 @@
 0x10	LIGHT
 0x20	DARK
 0x40	DIVINE
+0x30	LIGHT|DARK
 ##level
+-1	custom
 0x0	Level/Rank/Link
 0x1	1★
 0x2	2★
@@ -73,6 +76,7 @@
 0x40000000	Xyz-Related    
 0x80000000	Negate Effect  
 ##race
+-1	custom
 0x0	Race
 0x1	Warrior
 0x2	Spellcaster
@@ -99,6 +103,11 @@
 0x400000	Creator God
 0x800000	Wyrm
 0x1000000	Cyberse
+0x2000000	Race-19
+0x4000000	Race-1A
+0x8000000	Race-1B
+0x10000000	Race-1C
+0x20000000	Race-1D
 ##type
 0x1	Monster   
 0x2	Spell     
@@ -127,6 +136,12 @@
 0x1000000	Pendulum  
 0x2000000	SPSummon  
 0x4000000	Link      
+0x8000	Type-EX
+0x8000000	Type-1B
+0x10000000	Type-1C
+0x20000000	Type-1D
+0x40000000	Type-1E
+0x80000000	Type-1F
 ##setname
 -1	Custom
 0x0	Archetype
