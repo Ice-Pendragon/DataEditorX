@@ -1,4 +1,4 @@
-﻿[DataEditorX]2.4.3.2[DataEditorX]
+﻿[DataEditorX]2.4.4.0[DataEditorX]
 [URL]https://github.com/Ice-Pendragon/DataEditorX/raw/master/win32/win32.zip[URL]
 
 Forked from https://github.com/247321453/DataEditorX
