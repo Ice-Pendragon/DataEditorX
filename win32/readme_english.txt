@@ -1,4 +1,9 @@
 ﻿
+Forked from https://github.com/247321453/DataEditorX
+All copyright belongs to 247321453, the original author.
+Descriptions below are from the original author.
+Report issues on https://github.com/Ice-Pendragon/DataEditorX/issues
+
 ★Environment
 This program based on .Net2.0/winXP(need .Net2.0)/win7(with.Net2.0)/win8(need.Net3.5 include 2.0)
 
