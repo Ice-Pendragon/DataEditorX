@@ -1,4 +1,7 @@
 ﻿★更新历史
+2.4.3.2
+Forked and renewed
+Added korean language
 2.4.3.1
 pack.db更新
 2.4.3.0
