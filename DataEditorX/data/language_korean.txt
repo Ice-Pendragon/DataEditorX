@@ -13,26 +13,26 @@ CodeEditForm.mainMenu.menuitem_setcard	카드 선택
 CodeEditForm.mainMenu.menuitem_help	도움말(&H)
 CodeEditForm.mainMenu.menuitem_about	CodeEditor에 대하여
 #
-DataEditForm.btn_img	이미지 선택
-DataEditForm.lb_types	종류　　　　　　　　　　　　 (※해당사항 전부 체크)
-DataEditForm.lb_markers	 링크          마커
-DataEditForm.lb_tiptexts	스트링　　　　　　　　　　　 (※여기 스크립트 아님)
-DataEditForm.lb_categorys	세부사항　　　　　　　　　　 (※체크하지 않아도 됨)
-DataEditForm.lb_cardcode	코드번호
-DataEditForm.lb_cardalias	(동명)
-DataEditForm.lb_atkdef	공 / 수
-DataEditForm.lb_pleft_right	P 스케일
-DataEditForm.btn_reset	리셋
-DataEditForm.btn_lua	스크립트
-DataEditForm.btn_serach	검색
-DataEditForm.btn_del	카드 삭제
-DataEditForm.btn_undo	되돌리기
-DataEditForm.btn_mod	수정
-DataEditForm.btn_add	카드 추가
-DataEditForm.btn_PageDown	>>
-DataEditForm.btn_PageUp	<<
-DataEditForm.lv_cardlist.0	코드번호
-DataEditForm.lv_cardlist.1	카드명
+DataEditForm.pl_bottom.btn_img	이미지 선택
+DataEditForm.pl_main.lb_types	종류　　　　　　　　　　　　 (※해당사항 전부 체크)
+DataEditForm.pl_main.lb_markers	 링크          마커
+DataEditForm.pl_main.lb_tiptexts	스트링　　　　　　　　　　　 (※여기 스크립트 아님)
+DataEditForm.pl_main.lb_categorys	세부사항　　　　　　　　　　 (※체크하지 않아도 됨)
+DataEditForm.pl_main.lb_cardcode	코드번호
+DataEditForm.pl_main.lb_cardalias	(동명)
+DataEditForm.pl_main.lb_atkdef	공 / 수
+DataEditForm.pl_main.lb_pleft_right	P 스케일
+DataEditForm.pl_bottom.btn_reset	리셋
+DataEditForm.pl_bottom.btn_lua	스크립트
+DataEditForm.pl_bottom.btn_serach	검색
+DataEditForm.pl_bottom.btn_del	카드 삭제
+DataEditForm.pl_bottom.btn_undo	되돌리기
+DataEditForm.pl_bottom.btn_mod	수정
+DataEditForm.pl_bottom.btn_add	카드 추가
+DataEditForm.pl_bottom.btn_PageDown	>>
+DataEditForm.pl_bottom.btn_PageUp	<<
+DataEditForm.pl_main.lv_cardlist.0	코드번호
+DataEditForm.pl_main.lv_cardlist.1	카드명
 DataEditForm.mainMenu.menuitem_file	파일(&F)
 DataEditForm.mainMenu.menuitem_open	열기(&O)
 DataEditForm.mainMenu.menuitem_new	새 파일(&N)
@@ -96,7 +96,7 @@ MainForm.mainMenu.menuitem_closeall	모두 닫기
 0x5	생성 실패!
 0x6	추가 완료!
 0x7	추가 실패!
-0x8	코드번호는 0이 될 수 없습니다!
+0x8	코드번호는 0 이하가 될 수 없습니다!
 0x9	이미 존재합니다!
 0xa	변경되지 않았습니다.
 0xb	카드를 삭제할까요?

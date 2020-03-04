@@ -31,8 +31,8 @@ DataEditForm.pl_bottom.btn_mod	Modify
 DataEditForm.pl_bottom.btn_add	Add
 #DataEditForm.pl_bottom.btn_PageDown	Page Down
 #DataEditForm.pl_bottom.btn_PageUp	Page Up
-DataEditForm.lv_cardlist.0	Card Code
-DataEditForm.lv_cardlist.1	Card Name
+DataEditForm.pl_main.lv_cardlist.0	Card Code
+DataEditForm.pl_main.lv_cardlist.1	Card Name
 DataEditForm.mainMenu.menuitem_file	File(&F)
 DataEditForm.mainMenu.menuitem_open	Open(&O)
 DataEditForm.mainMenu.menuitem_new	New(&N)
@@ -94,7 +94,7 @@ MainForm.mainMenu.menuitem_closeall	Close All
 0x5	Create fail!
 0x6	Add succeed!
 0x7	Add fail!
-0x8	Code can't be 0!
+0x8	Code can't be 0 or less!
 0x9	It already exists!
 0xa	It's no changed.
 0xb	If delete Card(s)?

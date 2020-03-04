@@ -123,7 +123,6 @@
 0x1000	Tuner     
 0x2000	Synchro   
 0x4000	Token     
-0x8000	N/A
 0x10000	Quick-Play
 0x20000	Continuous
 0x40000	Equip     
@@ -135,11 +134,12 @@
 0x1000000	Pendulum  
 0x2000000	SPSummon  
 0x4000000	Link      
-0x8000000	Type-1B	
-0x10000000	Type-1C	
-0x20000000	Type-1D	
-0x40000000	Type-1E	
-0x80000000	Type-1F	
+0x8000	Extra     
+0x8000000	Type-27   
+0x10000000	Type-28   
+0x20000000	Type-29   
+0x40000000	Type-30   
+0x80000000	Type-31   
 ##setname
 -1	Custom
 0x0	Archetype
