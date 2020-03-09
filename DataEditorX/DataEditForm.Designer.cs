@@ -490,7 +490,7 @@ namespace DataEditorX
             this.cb_cardattribute.FormattingEnabled = true;
             this.cb_cardattribute.Location = new System.Drawing.Point(412, 82);
             this.cb_cardattribute.Name = "cb_cardattribute";
-            this.cb_cardattribute.Size = new System.Drawing.Size(48, 20);
+            this.cb_cardattribute.Size = new System.Drawing.Size(42, 20);
             this.cb_cardattribute.TabIndex = 2;
             // 
             // tb_cardname
@@ -521,9 +521,9 @@ namespace DataEditorX
             this.cb_cardrace.DropDownWidth = 107;
             this.cb_cardrace.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cb_cardrace.FormattingEnabled = true;
-            this.cb_cardrace.Location = new System.Drawing.Point(466, 82);
+            this.cb_cardrace.Location = new System.Drawing.Point(460, 82);
             this.cb_cardrace.Name = "cb_cardrace";
-            this.cb_cardrace.Size = new System.Drawing.Size(84, 20);
+            this.cb_cardrace.Size = new System.Drawing.Size(90, 20);
             this.cb_cardrace.TabIndex = 2;
             // 
             // cb_setname1
@@ -1116,49 +1116,6 @@ namespace DataEditorX
             this.tb_link.TextChanged += new System.EventHandler(this.Tb_linkTextChanged);
             this.tb_link.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Tb_linkKeyPress);
             // 
-            // lb_cardlevel
-            // 
-            this.lb_cardlevel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lb_cardlevel.Location = new System.Drawing.Point(412, 59);
-            this.lb_cardlevel.Name = "lb_cardlevel";
-            this.lb_cardlevel.Size = new System.Drawing.Size(96, 15);
-            this.lb_cardlevel.TabIndex = 24;
-            this.lb_cardlevel.Text = "Level/Rank/Link";
-            this.lb_cardlevel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tb_cardlevel
-            // 
-            this.tb_cardlevel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tb_cardlevel.Location = new System.Drawing.Point(512, 56);
-            this.tb_cardlevel.MaxLength = 5;
-            this.tb_cardlevel.Name = "tb_cardlevel";
-            this.tb_cardlevel.Size = new System.Drawing.Size(38, 21);
-            this.tb_cardlevel.TabIndex = 25;
-            this.tb_cardlevel.Text = "0";
-            this.tb_cardlevel.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // tb_cardrace
-            // 
-            this.tb_cardrace.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tb_cardrace.Location = new System.Drawing.Point(466, 108);
-            this.tb_cardrace.MaxLength = 8;
-            this.tb_cardrace.Name = "tb_cardrace";
-            this.tb_cardrace.Size = new System.Drawing.Size(84, 21);
-            this.tb_cardrace.TabIndex = 23;
-            this.tb_cardrace.Text = "0";
-            this.tb_cardrace.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // tb_cardattribute
-            // 
-            this.tb_cardattribute.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tb_cardattribute.Location = new System.Drawing.Point(412, 108);
-            this.tb_cardattribute.MaxLength = 4;
-            this.tb_cardattribute.Name = "tb_cardattribute";
-            this.tb_cardattribute.Size = new System.Drawing.Size(48, 21);
-            this.tb_cardattribute.TabIndex = 22;
-            this.tb_cardattribute.Text = "0";
-            this.tb_cardattribute.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // pl_bottom
             // 
             this.pl_bottom.Controls.Add(this.btn_PageDown);
@@ -1228,6 +1185,49 @@ namespace DataEditorX
             this.pl_main.Name = "pl_main";
             this.pl_main.Size = new System.Drawing.Size(864, 559);
             this.pl_main.TabIndex = 0;
+            // 
+            // lb_cardlevel
+            // 
+            this.lb_cardlevel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lb_cardlevel.Location = new System.Drawing.Point(412, 59);
+            this.lb_cardlevel.Name = "lb_cardlevel";
+            this.lb_cardlevel.Size = new System.Drawing.Size(96, 15);
+            this.lb_cardlevel.TabIndex = 24;
+            this.lb_cardlevel.Text = "Level/Rank/Link";
+            this.lb_cardlevel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tb_cardlevel
+            // 
+            this.tb_cardlevel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tb_cardlevel.Location = new System.Drawing.Point(512, 56);
+            this.tb_cardlevel.MaxLength = 5;
+            this.tb_cardlevel.Name = "tb_cardlevel";
+            this.tb_cardlevel.Size = new System.Drawing.Size(38, 21);
+            this.tb_cardlevel.TabIndex = 25;
+            this.tb_cardlevel.Text = "0";
+            this.tb_cardlevel.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // tb_cardrace
+            // 
+            this.tb_cardrace.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tb_cardrace.Location = new System.Drawing.Point(460, 108);
+            this.tb_cardrace.MaxLength = 8;
+            this.tb_cardrace.Name = "tb_cardrace";
+            this.tb_cardrace.Size = new System.Drawing.Size(90, 21);
+            this.tb_cardrace.TabIndex = 23;
+            this.tb_cardrace.Text = "0";
+            this.tb_cardrace.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // tb_cardattribute
+            // 
+            this.tb_cardattribute.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tb_cardattribute.Location = new System.Drawing.Point(412, 108);
+            this.tb_cardattribute.MaxLength = 4;
+            this.tb_cardattribute.Name = "tb_cardattribute";
+            this.tb_cardattribute.Size = new System.Drawing.Size(42, 21);
+            this.tb_cardattribute.TabIndex = 22;
+            this.tb_cardattribute.Text = "0";
+            this.tb_cardattribute.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // DataEditForm
             // 

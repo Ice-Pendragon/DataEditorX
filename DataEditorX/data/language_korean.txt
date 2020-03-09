@@ -22,6 +22,7 @@ DataEditForm.pl_main.lb_cardcode	코드번호
 DataEditForm.pl_main.lb_cardalias	(동명)
 DataEditForm.pl_main.lb_atkdef	공 / 수
 DataEditForm.pl_main.lb_pleft_right	P 스케일
+DataEditForm.pl_main.lb_cardlevel	레벨/랭크/링크
 DataEditForm.pl_bottom.btn_reset	리셋
 DataEditForm.pl_bottom.btn_lua	스크립트
 DataEditForm.pl_bottom.btn_serach	검색

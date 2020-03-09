@@ -22,6 +22,7 @@ DataEditForm.pl_main.lb_cardcode	Code
 DataEditForm.pl_main.lb_cardalias	Alias
 DataEditForm.pl_main.lb_atkdef	ATK/DEF
 DataEditForm.pl_main.lb_pleft_right	Pscale
+DataEditForm.pl_main.lb_cardlevel	Level/Rank/Link
 DataEditForm.pl_bottom.btn_reset	Reset
 DataEditForm.pl_bottom.btn_lua	Script
 DataEditForm.pl_bottom.btn_serach	Search
