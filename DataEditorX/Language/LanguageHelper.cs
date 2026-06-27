@@ -65,13 +65,23 @@ namespace DataEditorX.Language
                 int lastDot = currentKey.LastIndexOf(SEP_CONTROL);
                 if (lastDot < 0)
                     break;
+                int suffixDot = lastDot;
+                int columnIndex;
+                if (int.TryParse(
+                    currentKey.Substring(lastDot + 1),
+                    out columnIndex))
+                {
+                    suffixDot = currentKey.LastIndexOf(
+                        SEP_CONTROL,
+                        lastDot - 1);
+                }
                 int parentDot =
-                    currentKey.LastIndexOf(SEP_CONTROL, lastDot - 1);
+                    currentKey.LastIndexOf(SEP_CONTROL, suffixDot - 1);
                 if (parentDot < 0)
                     break;
                 currentKey = currentKey.Remove(
                     parentDot + 1,
-                    lastDot - parentDot);
+                    suffixDot - parentDot);
             }
             title = null;
             return false;

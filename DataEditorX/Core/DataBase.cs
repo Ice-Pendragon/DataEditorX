@@ -438,19 +438,19 @@ namespace DataEditorX.Core
 		/// </summary>
 		/// <param name="c">卡片数据</param>
 		/// <returns>SQL语句</returns>
-		public static string GetUpdateSQL(Card c)
+		public static string GetUpdateSQL(Card c, long types = -(long)1, long categories = -(long)1)
 		{
 			StringBuilder st = new StringBuilder();
 			st.Append("update datas set ot="); st.Append(c.ot.ToString());
 			st.Append(",alias="); st.Append(c.alias.ToString());
 			st.Append(",setcode="); st.Append(c.setcode.ToString());
-			st.Append(",type="); st.Append(c.type.ToString());
+			st.Append(",type=((type & ~"); st.Append(types.ToString()); st.Append(") | "); st.Append((c.type & types).ToString()); st.Append(")");
 			st.Append(",atk="); st.Append(c.atk.ToString());
 			st.Append(",def="); st.Append(c.def.ToString());
 			st.Append(",level="); st.Append(c.level.ToString());
 			st.Append(",race="); st.Append(c.race.ToString());
 			st.Append(",attribute="); st.Append(c.attribute.ToString());
-			st.Append(",category="); st.Append(c.category.ToString());
+			st.Append(",category=((category & ~"); st.Append(categories.ToString()); st.Append(") | "); st.Append((c.category & categories).ToString()); st.Append(")");
 			st.Append(" where id="); st.Append(c.id.ToString());
 			st.Append("; update texts set name='"); st.Append(c.name.Replace("'", "''"));
 			st.Append("',desc='"); st.Append(c.desc.Replace("'", "''")); st.Append("', ");

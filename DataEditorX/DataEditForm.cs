@@ -287,21 +287,23 @@ namespace DataEditorX
 		//初始化FlowLayoutPanel
 		void InitCheckPanel(FlowLayoutPanel fpanel, Dictionary<long, string> dic)
 		{
+			List<Control> cboxes = new List<Control>();
+			int maxWidth = 0;
+			int minHeight = 0;
+
 			fpanel.SuspendLayout();
 			fpanel.Controls.Clear();
 			foreach (long key in dic.Keys)
 			{
 				string value = dic[key];
-				if(value != null && value.StartsWith("NULL"))
+				if(value != null && (value == "NULL" || value.StartsWith("NULL,")))
 				{
 					Label lab=new Label();
-					string[] sizes = value.Split(',');
-					if(sizes.Length>=3){
-						lab.Size=new Size(int.Parse(sizes[1]),int.Parse(sizes[2]));
-					}
-					lab.AutoSize = false;
+					lab.Size=new Size(0,0);
+					lab.AutoSize = true;
 					lab.Margin = fpanel.Margin;
 					fpanel.Controls.Add(lab);
+					cboxes.Add(lab);
 				}else{
 					CheckBox _cbox = new CheckBox();
 					//_cbox.Name = fpanel.Name + key.ToString("x");
@@ -312,7 +314,25 @@ namespace DataEditorX
 					_cbox.CheckedChanged += _cbox_CheckedChanged;
 					//_cbox.Click += PanelOnCheckClick;
 					fpanel.Controls.Add(_cbox);
+					cboxes.Add(_cbox);
 				}
+			}
+			fpanel.ResumeLayout(false);
+			fpanel.PerformLayout();
+
+			foreach (Control _cbox in cboxes)
+			{
+				if (_cbox.Width > maxWidth)
+					maxWidth = _cbox.Width;
+				if (minHeight == 0 || _cbox.Height < minHeight)
+					minHeight = _cbox.Height;
+			}
+			fpanel.SuspendLayout();
+			foreach (Control _cbox in cboxes)
+			{
+				_cbox.AutoSize = false;
+				_cbox.Width = maxWidth;
+				_cbox.Height = minHeight;
 			}
 			fpanel.ResumeLayout(false);
 			fpanel.PerformLayout();
@@ -471,10 +491,33 @@ namespace DataEditorX
 					else
 						temp = (long)cbox.Tag;
 					if (cbox.Checked)
-						number += temp;
+						number |= temp;
 				}
 			}
 			return number;
+		}
+		//
+		long GetVisibleBits(FlowLayoutPanel fpl)
+		{
+			long number = 0;
+			foreach (Control c in fpl.Controls)
+			{
+				if (c is CheckBox)
+				{
+					CheckBox cbox = (CheckBox)c;
+					if (cbox.Tag != null)
+						number |= (long)cbox.Tag;
+				}
+			}
+			return number;
+		}
+		public long GetVisibleTypes()
+		{
+			return GetVisibleBits(pl_cardtype);
+		}
+		public long GetVisibleCategories()
+		{
+			return GetVisibleBits(pl_category);
 		}
 		//添加列表行
 		void AddListView(int p)
@@ -1664,6 +1707,30 @@ namespace DataEditorX
 		#endregion
 
 		#region 语言菜单
+		public void SetLanguage(DataConfig datacfg)
+		{
+			long types = GetVisibleBits(pl_cardtype);
+			long categories = GetVisibleBits(pl_category);
+
+			Card currentCard = GetCard();
+			Card savedOldCard = oldCard;
+
+			currentCard.type =
+				(savedOldCard.type & ~types)
+				| (currentCard.type & types);
+
+			currentCard.category =
+				(savedOldCard.category & ~categories)
+				| (currentCard.category & categories);	
+
+			LanguageHelper.SetFormLabel(this);
+			InitControl(datacfg);
+			SetCard(currentCard);
+
+			oldCard = savedOldCard;
+			GetLanguageItem();
+			SetTitle();
+		}
 		void GetLanguageItem()
 		{
 			if (!Directory.Exists(datapath))
@@ -1692,8 +1759,10 @@ namespace DataEditorX
 			{
 				ToolStripMenuItem tsmi = (ToolStripMenuItem)sender;
 				MyConfig.Save(MyConfig.TAG_LANGUAGE, tsmi.Text);
-				GetLanguageItem();
-				MyMsg.Show(LMSG.PlzRestart);
+				MainForm mainForm =
+					DockPanel.FindForm() as MainForm;
+				if (mainForm != null)
+					mainForm.ReloadLanguage();
 			}
 		}
 		#endregion

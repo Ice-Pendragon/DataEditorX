@@ -154,8 +154,10 @@ namespace DataEditorX.Core
 				}
 				else
 				{//更新数据
-					sql = DataBase.GetUpdateSQL(c);
-					_undoSQL = DataBase.GetUpdateSQL(oldCard);
+					long types = dataform.GetVisibleTypes();
+					long categories = dataform.GetVisibleCategories();
+					sql = DataBase.GetUpdateSQL(c,types,categories);
+					_undoSQL = DataBase.GetUpdateSQL(oldCard,types,categories);
 				}
 				if (DataBase.Command(dataform.GetOpenFile(), sql) > 0)
 				{

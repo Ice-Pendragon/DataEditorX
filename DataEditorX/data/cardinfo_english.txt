@@ -40,38 +40,38 @@
 0x2	
 0x4	
 ##category
-0x1	S/T Destroy    
+0x1	S/T Destroy
 0x2	Destroy Monster
-0x4	Banish         
-0x8	Graveyard      
-0x10	Back to Hand   
-0x20	Back to Deck   
-0x40	Destroy Hand   
-0x80	Destroy Deck   
-0x100	Draw           
-0x200	Search         
-0x400	Recovery       
-0x800	Position       
-0x1000	Control        
-0x2000	Change ATK/DEF 
-0x4000	Piercing       
-0x8000	Repeat Attack  
-0x10000	Limit Attack   
-0x20000	Direct Attack  
-0x40000	Special Summon 
-0x80000	Token          
-0x100000	Type-Related   
+0x4	Banish
+0x8	Graveyard
+0x10	Back to Hand
+0x20	Back to Deck
+0x40	Destroy Hand
+0x80	Destroy Deck
+0x100	Draw
+0x200	Search
+0x400	Recovery
+0x800	Position
+0x1000	Control
+0x2000	Change ATK/DEF
+0x4000	Piercing
+0x8000	Repeat Attack
+0x10000	Limit Attack
+0x20000	Direct Attack
+0x40000	Special Summon
+0x80000	Token
+0x100000	Type-Related
 0x200000	Property-Related
-0x400000	Damage LP      
-0x800000	Recover LP     
-0x1000000	Destroy        
-0x2000000	Select         
-0x4000000	Counter        
-0x8000000	Gamble         
-0x10000000	Fusion-Related 
-0x20000000	Tuner-Related  
-0x40000000	Xyz-Related    
-0x80000000	Negate Effect  
+0x400000	Damage LP
+0x800000	Recover LP
+0x1000000	Destroy
+0x2000000	Select
+0x4000000	Counter
+0x8000000	Gamble
+0x10000000	Fusion-Related
+0x20000000	Tuner-Related
+0x40000000	Xyz-Related
+0x80000000	Negate Effect
 ##race
 0x0	Race
 0x1	Warrior
@@ -100,33 +100,33 @@
 0x800000	Wyrm
 0x1000000	Cyberse
 ##type
-0x1	Monster   
-0x2	Spell     
-0x4	Trap      
+0x1	Monster
+0x2	Spell
+0x4	Trap
 0x8	N/A
-0x10	Normal    
-0x20	Effect    
-0x40	Fusion    
-0x80	Ritual    
+0x10	Normal
+0x20	Effect
+0x40	Fusion
+0x80	Ritual
 0x100	N/A
-0x200	Spirit    
-0x400	Union     
-0x800	Gemini    
-0x1000	Tuner     
-0x2000	Synchro   
-0x4000	Token     
+0x200	Spirit
+0x400	Union
+0x800	Gemini
+0x1000	Tuner
+0x2000	Synchro
+0x4000	Token
 0x8000	N/A
 0x10000	Quick-Play
 0x20000	Continuous
-0x40000	Equip     
-0x80000	Field     
-0x100000	Counter   
-0x200000	Flip      
-0x400000	Toon      
-0x800000	Xyz       
-0x1000000	Pendulum  
-0x2000000	SPSummon  
-0x4000000	Link      
+0x40000	Equip
+0x80000	Field
+0x100000	Counter
+0x200000	Flip
+0x400000	Toon
+0x800000	Xyz
+0x1000000	Pendulum
+0x2000000	SPSummon
+0x4000000	Link
 ##setname
 -1	Custom
 0x0	Archetype
@@ -199,7 +199,7 @@
 0x31	Fortune Lady	フォーチュンレディ
 0x32	Volcanic	ヴォルカニック
 0x33	Blackwing	BF（ブラックフェザー）
-0x1033  Assault Blackwing A BF（ブラックフェザー）
+0x1033	Assault Blackwing	A BF（ブラックフェザー）
 0x34	Crystal	宝玉
 0x1034	Crystal Beast	宝玉獣
 0x2034	Ultimate Gem God	究極宝玉神
@@ -239,7 +239,7 @@
 0x304e	Evoltile	エヴォルド
 0x604e	Evolsaur	エヴォルダ
 0x504e	Evolzar	エヴォルカイザー
-0xf4  N/A
+0xf4	N/A
 0x104f	/Assault Mode	／バスター
 0x50	Venom	ヴェノム
 0x51	Gadget	ガジェット
@@ -273,11 +273,11 @@
 0x6b	Bounzer	バウンサー
 0x6c	N/A	Lightray	ライトレイ
 0x6d	Djinn	魔人
-0x106d  N/A Djinn of Rituals  儀式魔人
+0x106d	N/A	Djinn of Rituals	儀式魔人
 0x6e	Prophecy	魔導
 0x106e	Spellbook	魔導書
 0x6f	Heroic	ヒロイック
-0x106f	Heroic Challenger	H・C	
+0x106f	Heroic Challenger	H・C
 0x206f	N/A	Heroic Champion	H－C
 0x70	Chronomaly	先史遺産
 0x71	Madolche	マドルチェ

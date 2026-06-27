@@ -45,6 +45,39 @@ namespace DataEditorX
             //初始化控件
             InitializeComponent();
         }
+        public void ReloadLanguage()
+        {
+            Form activeForm = dockPanel1.ActiveContent as Form;
+
+            if (activeForm != null && activeForm.MainMenuStrip != null)
+                ToolStripManager.RevertMerge(
+                    mainMenu,
+                    activeForm.MainMenuStrip);
+
+            conflang = MyConfig.GetLanguageFile(datapath);
+            datacfg = new DataConfig(MyConfig.GetCardInfoFile(datapath));
+
+            YGOUtil.SetConfig(datacfg);
+            LanguageHelper.LoadFormLabels(conflang);
+            LanguageHelper.SetFormLabel(this);
+
+            foreach (DockContent dc in dockPanel1.Contents)
+            {
+                DataEditForm def = dc as DataEditForm;
+
+                if (def != null)
+                    def.SetLanguage(datacfg);
+                else if (dc is Form)
+                    LanguageHelper.SetFormLabel((Form)dc);
+            }
+
+            if (activeForm != null && activeForm.MainMenuStrip != null)
+                ToolStripManager.Merge(
+                    activeForm.MainMenuStrip,
+                    mainMenu);
+
+            mainMenu.Refresh();
+        }
         public void SetDataPath(string datapath)
         {
             //判断是否合法
