@@ -169,10 +169,11 @@ namespace DataEditorX.Core
                     str = sr.ReadLine();
                     while (str != null)
                     {
-                        if (!str.StartsWith("!") && !str.StartsWith("#") && str.Length > 0)
+                        long id;
+                        if (long.TryParse(str.Trim(), out id) && id > 0)
                         {
-                            if (IDs.IndexOf(str) < 0)
-                                IDs.Add(str);
+                            if (IDs.IndexOf(id.ToString()) < 0)
+                                IDs.Add(id.ToString());
                         }
                         str = sr.ReadLine();
                     }
@@ -195,8 +196,14 @@ namespace DataEditorX.Core
             for (int i = 0; i < n; i++)
             {
                 string ex = Path.GetExtension(files[i]).ToLower();
+                string filename = Path.GetFileNameWithoutExtension(files[i]).Trim();
+                long id;
                 if (ex == ".jpg" || ex == ".png" || ex == ".bmp")
-                    list.Add(Path.GetFileNameWithoutExtension(files[i]));
+                    if (long.TryParse(filename, out id) && id > 0)
+                    {
+                        if (list.IndexOf(id.ToString()) < 0)
+                            list.Add(id.ToString());
+                    }
             }
             return list.ToArray();
         }
