@@ -104,15 +104,12 @@ namespace DataEditorX.Core
 									result += cmd.ExecuteNonQuery();
 								}
 							}
+							trans.Commit();
 						}
 						catch
 						{
 							trans.Rollback();//出错，回滚
 							result = -1;
-						}
-						finally
-						{
-							trans.Commit();
 						}
 					}
 					con.Close();
