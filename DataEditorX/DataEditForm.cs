@@ -342,6 +342,11 @@ namespace DataEditorX
 			cb.Items.Clear();
 			cb.Tag = keys;
 			cb.Items.AddRange(values);
+			if (cb.Items.Count == 0)
+			{
+				cb.SelectedIndex = -1;
+				return;
+			}
 			cb.SelectedIndex = 0;
 		}
 		//计算list最大行数
@@ -412,6 +417,11 @@ namespace DataEditorX
 		//设置combobox
 		void SetSelect(ComboBox cb, long k)
 		{
+			if (cb.Items.Count == 0)
+			{
+				cb.SelectedIndex = -1;
+				return;
+			}
 			if (cb.Tag == null)
 			{
 				cb.SelectedIndex = 0;
@@ -427,6 +437,10 @@ namespace DataEditorX
 		//得到所选值
 		long GetSelect(ComboBox cb)
 		{
+			if (cb.Items.Count == 0)
+			{
+				return -1;
+			}
 			if (cb.Tag == null)
 			{
 				return 0;

@@ -53,11 +53,25 @@ namespace DataEditorX.Language
 
         static bool GetLabel(string key, out string title)
         {
+            string currentKey = key;
             string v;
-            if (gWordsList.TryGetValue(key, out v))
+            while (true)
             {
-                title = v;
-                return true;
+                if (gWordsList.TryGetValue(currentKey, out v))
+                {
+                    title = v;
+                    return true;
+                }
+                int lastDot = currentKey.LastIndexOf(SEP_CONTROL);
+                if (lastDot < 0)
+                    break;
+                int parentDot =
+                    currentKey.LastIndexOf(SEP_CONTROL, lastDot - 1);
+                if (parentDot < 0)
+                    break;
+                currentKey = currentKey.Remove(
+                    parentDot + 1,
+                    lastDot - parentDot);
             }
             title = null;
             return false;
@@ -92,6 +106,8 @@ namespace DataEditorX.Language
             {
                 if (GetLabel(pName, out title))
                     c.Text = title;
+                else if (c.Text != "/")
+                    c.Text = "";
             }
 
             if (c.Controls.Count > 0)
