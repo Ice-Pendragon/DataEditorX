@@ -342,7 +342,10 @@ namespace DataEditorX.Config
                 if (process.Id != current.Id)
                 {
                     //保证要打开的进程同已经存在的进程来自同一文件路径
-                    if (filename == current.MainModule.FileName)
+                    if (string.Equals(
+                        Path.GetFullPath(filename),
+                        Path.GetFullPath(process.MainModule.FileName),
+                        StringComparison.OrdinalIgnoreCase))
                     {
                         //返回已经存在的进程
                         return process;
