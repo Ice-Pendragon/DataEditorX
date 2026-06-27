@@ -314,9 +314,7 @@ namespace DataEditorX.Core
 		#region 查询
 		static string toInt(long l)
 		{
-			unchecked{
-				return ((int)l).ToString();
-			}
+			return l.ToString();
 		}
 		public static string GetSelectSQL(Card c)
 		{

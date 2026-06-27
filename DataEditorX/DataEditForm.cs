@@ -263,7 +263,11 @@ namespace DataEditorX
 			InitComboBox(cb_cardrace, datacfg.dicCardRaces);
 			InitComboBox(cb_cardattribute, datacfg.dicCardAttributes);
 			InitComboBox(cb_cardrule, datacfg.dicCardRules);
-			InitComboBox(cb_cardlevel, datacfg.dicCardLevels);
+			string levelText;
+			if (datacfg.dicCardLevels.TryGetValue(0, out levelText))
+				lb_cardlevel.Text = levelText;
+			else
+				lb_cardlevel.Text = "";
 			//卡片类型
 			InitCheckPanel(pl_cardtype, datacfg.dicCardTypes);
 			//连接标记
@@ -548,14 +552,19 @@ namespace DataEditorX
 			//data
 			SetSelect(cb_cardrule, c.ot);
 			SetSelect(cb_cardattribute, c.attribute);
-			SetSelect(cb_cardlevel, (c.level & 0xff));
+			bool negativelevel = (c.level < 0);
+			if (negativelevel)
+				tb_cardlevel.Text = (-(c.level) - 0x100).ToString();
+			else
+				tb_cardlevel.Text = (c.level & 0xff).ToString();
+
 			SetSelect(cb_cardrace, c.race);
 			//setcode
 			long[] setcodes = c.GetSetCode();
-			tb_setcode1.Text = setcodes[0].ToString("x");
-			tb_setcode2.Text = setcodes[1].ToString("x");
-			tb_setcode3.Text = setcodes[2].ToString("x");
-			tb_setcode4.Text = setcodes[3].ToString("x");
+			tb_setcode1.Text = (setcodes[0] & 0xffff).ToString("x");
+			tb_setcode2.Text = (setcodes[1] & 0xffff).ToString("x");
+			tb_setcode3.Text = (setcodes[2] & 0xffff).ToString("x");
+			tb_setcode4.Text = (setcodes[3] & 0xffff).ToString("x");
 			//type,category
 			SetCheck(pl_cardtype, c.type);
 			if (c.IsType(Core.Info.CardType.TYPE_LINK)){
@@ -566,9 +575,15 @@ namespace DataEditorX
 				SetCheck(pl_markers, 0);
 			}
 			SetCheck(pl_category, c.category);
-			//Pendulum
-			tb_pleft.Text = ((c.level >> 24) & 0xff).ToString();
-			tb_pright.Text = ((c.level >> 16) & 0xff).ToString();
+			//pscale
+			if (negativelevel) {
+				tb_pleft.Text = ((-(c.level) >> 24) & 0xff + 1).ToString();
+				tb_pright.Text = ((-(c.level) >> 16) & 0xff + 1).ToString();
+			}
+			else {
+				tb_pleft.Text = ((c.level >> 24) & 0xff).ToString();
+				tb_pright.Text = ((c.level >> 16) & 0xff).ToString();
+			}
 			//atk，def
 			tb_atk.Text = (c.atk < 0) ? "?" : c.atk.ToString();
 			if (c.IsType(Core.Info.CardType.TYPE_LINK))
@@ -593,7 +608,6 @@ namespace DataEditorX
 
 			c.ot = (int)GetSelect(cb_cardrule);
 			c.attribute = (int)GetSelect(cb_cardattribute);
-			c.level = (int)GetSelect(cb_cardlevel);
 			c.race = GetSelect(cb_cardrace);
 			//系列
 			c.SetSetCode(
@@ -605,10 +619,21 @@ namespace DataEditorX
 			c.type = GetCheck(pl_cardtype);
 			c.category = GetCheck(pl_category);
 
-			int.TryParse(tb_pleft.Text, out temp);
-			c.level += (temp << 24);
-			int.TryParse(tb_pright.Text, out temp);
-			c.level += (temp << 16);
+			long.TryParse(tb_cardlevel.Text, out temp);
+			if (temp < 0) {
+				c.level = -((temp + 0x100) & 0xff);
+				long.TryParse(tb_pleft.Text, out temp);
+				c.level -= (((temp & 0x7f) - 1) << 24);
+				long.TryParse(tb_pright.Text, out temp);
+				c.level -= (((temp & 0x7f) - 1) << 16);
+			}
+			else {
+				c.level = (temp & 0xff);
+				long.TryParse(tb_pleft.Text, out temp);
+				c.level += ((temp & 0x7f) << 24);
+				long.TryParse(tb_pright.Text, out temp);
+				c.level += ((temp & 0x7f) << 16);
+			}
 			if (tb_atk.Text == "?" || tb_atk.Text == "？")
 				c.atk = -2;
 			else if (tb_atk.Text == ".")

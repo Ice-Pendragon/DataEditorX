@@ -101,7 +101,7 @@ namespace DataEditorX.Core
             {
                 foreach (long sc in setcodes)
                 {
-                    this.setcode += (sc << i);
+                    this.setcode += ((sc & 0xffff) << i);
                     i += 0x10;
                 }
             }
@@ -116,7 +116,7 @@ namespace DataEditorX.Core
                 foreach (string sc in setcodes)
                 {
                     long.TryParse(sc, NumberStyles.HexNumber, null, out temp);
-                    this.setcode += (temp << i);
+                    this.setcode += ((temp & 0xffff) << i);
                     i += 0x10;
                 }
             }

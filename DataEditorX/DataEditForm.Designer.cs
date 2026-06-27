@@ -83,7 +83,8 @@ namespace DataEditorX
         	this.cb_cardattribute = new System.Windows.Forms.ComboBox();
         	this.tb_cardname = new System.Windows.Forms.TextBox();
         	this.cb_cardrule = new System.Windows.Forms.ComboBox();
-        	this.cb_cardlevel = new System.Windows.Forms.ComboBox();
+        	this.lb_cardlevel = new System.Windows.Forms.Label();
+        	this.tb_cardlevel = new System.Windows.Forms.TextBox();
         	this.cb_cardrace = new System.Windows.Forms.ComboBox();
         	this.cb_setname2 = new System.Windows.Forms.ComboBox();
         	this.cb_setname1 = new System.Windows.Forms.ComboBox();
@@ -511,16 +512,28 @@ namespace DataEditorX
         	this.cb_cardrule.Size = new System.Drawing.Size(140, 20);
         	this.cb_cardrule.TabIndex = 2;
         	// 
-        	// cb_cardlevel
+        	// lb_cardlevel
         	// 
-        	this.cb_cardlevel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-        	this.cb_cardlevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-        	this.cb_cardlevel.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-        	this.cb_cardlevel.FormattingEnabled = true;
-        	this.cb_cardlevel.Location = new System.Drawing.Point(412, 83);
-        	this.cb_cardlevel.Name = "cb_cardlevel";
-        	this.cb_cardlevel.Size = new System.Drawing.Size(140, 20);
-        	this.cb_cardlevel.TabIndex = 2;
+        	this.lb_cardlevel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+        	this.lb_cardlevel.AutoSize = true;
+        	this.lb_cardlevel.BackColor = System.Drawing.SystemColors.Control;
+        	this.lb_cardlevel.Location = new System.Drawing.Point(408, 87);
+        	this.lb_cardlevel.Name = "lb_cardlevel";
+        	this.lb_cardlevel.Size = new System.Drawing.Size(103, 12);
+        	this.lb_cardlevel.TabIndex = 7;
+        	this.lb_cardlevel.Text = "Level/Rank/Link";
+        	this.lb_cardlevel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+        	// 
+        	// tb_cardlevel
+        	// 
+        	this.tb_cardlevel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+        	this.tb_cardlevel.AutoSize = false;
+        	this.tb_cardlevel.Location = new System.Drawing.Point(518, 83);
+        	this.tb_cardlevel.MaxLength = 3;
+        	this.tb_cardlevel.Name = "tb_cardlevel";
+        	this.tb_cardlevel.Size = new System.Drawing.Size(34, 20);
+        	this.tb_cardlevel.TabIndex = 2;
+        	this.tb_cardlevel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
         	// 
         	// cb_cardrace
         	// 
@@ -1179,7 +1192,8 @@ namespace DataEditorX
         	this.pl_main.Controls.Add(this.tb_cardname);
         	this.pl_main.Controls.Add(this.cb_cardattribute);
         	this.pl_main.Controls.Add(this.cb_setname3);
-        	this.pl_main.Controls.Add(this.cb_cardlevel);
+        	this.pl_main.Controls.Add(this.tb_cardlevel);
+        	this.pl_main.Controls.Add(this.lb_cardlevel);
         	this.pl_main.Controls.Add(this.cb_setname1);
         	this.pl_main.Controls.Add(this.cb_setname2);
         	this.pl_main.Controls.Add(this.cb_cardrace);
@@ -1281,7 +1295,8 @@ namespace DataEditorX
         private System.Windows.Forms.ComboBox cb_setname1;
         private System.Windows.Forms.ComboBox cb_setname2;
         private System.Windows.Forms.ComboBox cb_cardrace;
-        private System.Windows.Forms.ComboBox cb_cardlevel;
+        private System.Windows.Forms.Label lb_cardlevel;
+        private System.Windows.Forms.TextBox tb_cardlevel;
         private System.Windows.Forms.ComboBox cb_cardrule;
         private System.Windows.Forms.TextBox tb_cardname;
         private System.Windows.Forms.ComboBox cb_cardattribute;
