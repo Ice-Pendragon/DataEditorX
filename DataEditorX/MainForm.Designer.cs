@@ -259,6 +259,8 @@ namespace DataEditorX
 			this.menuitem_shistory.Name = "menuitem_shistory";
 			this.menuitem_shistory.Size = new System.Drawing.Size(261, 22);
 			this.menuitem_shistory.Text = "Script History";
+			this.menuitem_shistory.Enabled = false;
+			this.menuitem_shistory.Visible = false;
 			// 
 			// toolStripSeparator5
 			// 
@@ -298,6 +300,8 @@ namespace DataEditorX
 			this.menuitem_codeeditor.Size = new System.Drawing.Size(157, 22);
 			this.menuitem_codeeditor.Text = "CodeEditor";
 			this.menuitem_codeeditor.Click += new System.EventHandler(this.Menuitem_codeeditorClick);
+			this.menuitem_codeeditor.Enabled = false;
+			this.menuitem_codeeditor.Visible = false;
 			// 
 			// toolStripSeparator2
 			// 

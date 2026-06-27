@@ -238,6 +238,8 @@ namespace DataEditorX
         	this.menu_image.Name = "menu_image";
         	this.menu_image.Size = new System.Drawing.Size(69, 21);
         	this.menu_image.Text = "Image(&I)";
+        	this.menu_image.Enabled = false;
+        	this.menu_image.Visible = false;
         	// 
         	// menuitem_mseconfig
         	// 
@@ -334,6 +336,8 @@ namespace DataEditorX
         	this.menuitem_openfileinthis.Size = new System.Drawing.Size(212, 22);
         	this.menuitem_openfileinthis.Text = "Open File in This";
         	this.menuitem_openfileinthis.Click += new System.EventHandler(this.menuitem_openfileinthis_Click);
+        	this.menuitem_openfileinthis.Enabled = false;
+        	this.menuitem_openfileinthis.Visible = false;
         	// 
         	// tsep2
         	// 
@@ -386,6 +390,8 @@ namespace DataEditorX
         	this.menuitem_findluafunc.Size = new System.Drawing.Size(212, 22);
         	this.menuitem_findluafunc.Text = "Find Lua Function";
         	this.menuitem_findluafunc.Click += new System.EventHandler(this.menuitem_findluafunc_Click);
+        	this.menuitem_findluafunc.Enabled = false;
+        	this.menuitem_findluafunc.Visible = false;
         	// 
         	// menuitem_exportdata
         	// 
@@ -398,6 +404,7 @@ namespace DataEditorX
         	// 
         	this.tsep5.Name = "tsep5";
         	this.tsep5.Size = new System.Drawing.Size(209, 6);
+        	this.tsep5.Visible = false;
         	// 
         	// menuitem_cutimages
         	// 
@@ -405,6 +412,8 @@ namespace DataEditorX
         	this.menuitem_cutimages.Size = new System.Drawing.Size(212, 22);
         	this.menuitem_cutimages.Text = "Cut Images";
         	this.menuitem_cutimages.Click += new System.EventHandler(this.Menuitem_cutimagesClick);
+        	this.menuitem_cutimages.Enabled = false;
+        	this.menuitem_cutimages.Visible = false;
         	// 
         	// menuitem_convertimage
         	// 
@@ -412,11 +421,14 @@ namespace DataEditorX
         	this.menuitem_convertimage.Size = new System.Drawing.Size(212, 22);
         	this.menuitem_convertimage.Text = "Import Images";
         	this.menuitem_convertimage.Click += new System.EventHandler(this.Menuitem_convertimageClick);
+        	this.menuitem_convertimage.Enabled = false;
+        	this.menuitem_convertimage.Visible = false;
         	// 
         	// tsep1
         	// 
         	this.tsep1.Name = "tsep1";
         	this.tsep1.Size = new System.Drawing.Size(209, 6);
+        	this.tsep1.Visible = false;
         	// 
         	// menuitem_cancelTask
         	// 
@@ -424,6 +436,8 @@ namespace DataEditorX
         	this.menuitem_cancelTask.Size = new System.Drawing.Size(212, 22);
         	this.menuitem_cancelTask.Text = "Cancel Task";
         	this.menuitem_cancelTask.Click += new System.EventHandler(this.Menuitem_cancelTaskClick);
+        	this.menuitem_cancelTask.Enabled = false;
+        	this.menuitem_cancelTask.Visible = false;
         	// 
         	// menuitem_autoreturn
         	// 
@@ -431,6 +445,8 @@ namespace DataEditorX
         	this.menuitem_autoreturn.Size = new System.Drawing.Size(212, 22);
         	this.menuitem_autoreturn.Text = "*Auto return";
         	this.menuitem_autoreturn.Click += new System.EventHandler(this.Menuitem_autoreturnClick);
+        	this.menuitem_autoreturn.Enabled = false;
+        	this.menuitem_autoreturn.Visible = false;
         	// 
         	// menuitem_help
         	// 
@@ -451,6 +467,8 @@ namespace DataEditorX
         	this.menuitem_about.Size = new System.Drawing.Size(189, 22);
         	this.menuitem_about.Text = "About";
         	this.menuitem_about.Click += new System.EventHandler(this.Menuitem_aboutClick);
+        	this.menuitem_about.Enabled = false;
+        	this.menuitem_about.Visible = false;
         	// 
         	// menuitem_language
         	// 
@@ -464,6 +482,8 @@ namespace DataEditorX
         	this.menuitem_checkupdate.Size = new System.Drawing.Size(189, 22);
         	this.menuitem_checkupdate.Text = "Check Update";
         	this.menuitem_checkupdate.Click += new System.EventHandler(this.Menuitem_checkupdateClick);
+        	this.menuitem_checkupdate.Enabled = false;
+        	this.menuitem_checkupdate.Visible = false;
         	// 
         	// menuitem_autocheckupdate
         	// 
@@ -471,6 +491,8 @@ namespace DataEditorX
         	this.menuitem_autocheckupdate.Size = new System.Drawing.Size(189, 22);
         	this.menuitem_autocheckupdate.Text = "Auto Check Update";
         	this.menuitem_autocheckupdate.Click += new System.EventHandler(this.menuitem_autocheckupdate_Click);
+        	this.menuitem_autocheckupdate.Enabled = false;
+        	this.menuitem_autocheckupdate.Visible = false;
         	// 
         	// menuitem_github
         	// 
@@ -478,6 +500,8 @@ namespace DataEditorX
         	this.menuitem_github.Size = new System.Drawing.Size(189, 22);
         	this.menuitem_github.Text = "Source Code";
         	this.menuitem_github.Click += new System.EventHandler(this.Menuitem_githubClick);
+        	this.menuitem_github.Enabled = false;
+        	this.menuitem_github.Visible = false;
         	// 
         	// cb_cardattribute
         	// 
@@ -856,6 +880,7 @@ namespace DataEditorX
         	this.btn_lua.Text = "&Lua Script";
         	this.btn_lua.UseVisualStyleBackColor = true;
         	this.btn_lua.Click += new System.EventHandler(this.Btn_luaClick);
+        	this.btn_lua.Enabled = false;
         	// 
         	// btn_reset
         	// 
