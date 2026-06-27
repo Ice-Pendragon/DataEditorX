@@ -188,8 +188,8 @@ namespace DataEditorX.Core
 						{
 							foreach ( string str in SQLs )
 							{
-								int tmp;
-								int.TryParse(str, out tmp);
+								long tmp;
+								long.TryParse(str, out tmp);
 								
 								if ( string.IsNullOrEmpty(str) )
 									SQLstr = defaultSQL;
@@ -344,7 +344,7 @@ namespace DataEditorX.Core
             if ((c.level & 0xff0000) > 0)
                 sb.Append(" and (datas.level & 16711680) = " + toInt(c.level & 0xff0000));
             if (c.race>0)
-				sb.Append(" and datas.race = "+toInt(c.race));
+				sb.Append(" and datas.race = "+c.race.ToString());
 			if(c.type>0)
 				sb.Append(" and datas.type & "+toInt(c.type)+" = "+toInt(c.type));
 			if(c.category>0)

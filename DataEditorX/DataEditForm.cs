@@ -584,7 +584,7 @@ namespace DataEditorX
 		#region 获取卡片
 		public Card GetCard()
 		{
-			int temp;
+			long temp;
 			Card c = new Card(0);
 			c.name = tb_cardname.Text;
 			c.desc = tb_cardtext.Text;
@@ -594,7 +594,7 @@ namespace DataEditorX
 			c.ot = (int)GetSelect(cb_cardrule);
 			c.attribute = (int)GetSelect(cb_cardattribute);
 			c.level = (int)GetSelect(cb_cardlevel);
-			c.race = (int)GetSelect(cb_cardrace);
+			c.race = GetSelect(cb_cardrace);
 			//系列
 			c.SetSetCode(
 				tb_setcode1.Text,
