@@ -81,12 +81,13 @@ namespace DataEditorX
 			// 
 			// dockPanel1
 			// 
+			this.dockPanel1.AllowEndUserNestedDocking = false;
 			this.dockPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
 			this.dockPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dockPanel1.Location = new System.Drawing.Point(0, 25);
 			this.dockPanel1.Margin = new System.Windows.Forms.Padding(0);
 			this.dockPanel1.Name = "dockPanel1";
-			this.dockPanel1.Size = new System.Drawing.Size(864, 597);
+			this.dockPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			dockPanelGradient1.EndColor = System.Drawing.SystemColors.ControlLight;
 			dockPanelGradient1.StartColor = System.Drawing.SystemColors.ControlLight;
 			autoHideStripSkin1.DockStripGradient = dockPanelGradient1;
@@ -94,7 +95,6 @@ namespace DataEditorX
 			tabGradient1.StartColor = System.Drawing.SystemColors.Control;
 			tabGradient1.TextColor = System.Drawing.SystemColors.ControlDarkDark;
 			autoHideStripSkin1.TabGradient = tabGradient1;
-			autoHideStripSkin1.TextFont = new System.Drawing.Font("微软雅黑", 9F);
 			dockPanelSkin1.AutoHideStripSkin = autoHideStripSkin1;
 			tabGradient2.EndColor = System.Drawing.SystemColors.ControlLightLight;
 			tabGradient2.StartColor = System.Drawing.SystemColors.ControlLightLight;
@@ -108,7 +108,6 @@ namespace DataEditorX
 			tabGradient3.TextColor = System.Drawing.SystemColors.ControlText;
 			dockPaneStripGradient1.InactiveTabGradient = tabGradient3;
 			dockPaneStripSkin1.DocumentGradient = dockPaneStripGradient1;
-			dockPaneStripSkin1.TextFont = new System.Drawing.Font("微软雅黑", 9F);
 			tabGradient4.EndColor = System.Drawing.SystemColors.ActiveCaption;
 			tabGradient4.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
 			tabGradient4.StartColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -143,7 +142,8 @@ namespace DataEditorX
 			this.mainMenu.Location = new System.Drawing.Point(0, 0);
 			this.mainMenu.MdiWindowListItem = this.menuitem_windows;
 			this.mainMenu.Name = "mainMenu";
-			this.mainMenu.Size = new System.Drawing.Size(864, 25);
+			this.mainMenu.Dock = System.Windows.Forms.DockStyle.Top;
+			this.mainMenu.Height = 25;
 			this.mainMenu.TabIndex = 3;
 			this.mainMenu.Text = "mainMenu";
 			// 
@@ -335,7 +335,10 @@ namespace DataEditorX
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 			this.BackColor = System.Drawing.SystemColors.Control;
-			this.ClientSize = new System.Drawing.Size(864, 622);
+			this.Size = new System.Drawing.Size(960 + 14, 720 + 7);
+			this.Font = System.Drawing.SystemFonts.MessageBoxFont;
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.MaximizeBox = false;
 			this.Controls.Add(this.dockPanel1);
 			this.Controls.Add(this.mainMenu);
 			this.IsMdiContainer = true;

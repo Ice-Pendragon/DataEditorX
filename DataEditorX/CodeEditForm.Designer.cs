@@ -228,7 +228,7 @@ namespace DataEditorX
             this.fctb.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.fctb.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.fctb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fctb.Font = new System.Drawing.Font("Consolas", 14.25F);
+            this.fctb.Font = new System.Drawing.Font(DataEditorX.Config.MyConfig.readString(DataEditorX.Config.MyConfig.TAG_FONT_NAME), DataEditorX.Config.MyConfig.readFloat(DataEditorX.Config.MyConfig.TAG_FONT_SIZE, 9F) * 1.6F);
             this.fctb.ForeColor = System.Drawing.Color.GhostWhite;
             this.fctb.Hotkeys = resources.GetString("fctb.Hotkeys");
             this.fctb.IndentBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -273,7 +273,8 @@ namespace DataEditorX
             this.Controls.Add(this.tb_input);
             this.Controls.Add(this.documentMap1);
             this.Controls.Add(this.mainMenu);
-            this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DockAreas = WeifenLuo.WinFormsUI.Docking.DockAreas.Document;
+            this.Font = System.Drawing.SystemFonts.MessageBoxFont;
             this.MainMenuStrip = this.mainMenu;
             this.Name = "CodeEditForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

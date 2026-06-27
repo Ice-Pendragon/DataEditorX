@@ -152,6 +152,8 @@ namespace DataEditorX
 			//
 			GetLanguageItem();
 			//   CheckUpdate(false);//检查更新
+			//Resize Controls
+			InitSizes();
 		}
 		//窗体关闭
 		void DataEditFormFormClosing(object sender, FormClosingEventArgs e)
@@ -1886,8 +1888,48 @@ namespace DataEditorX
 		}
 		void DataEditFormSizeChanged(object sender, EventArgs e)
 		{
+			InitSizes();
 			InitListRows();
 		}
 		
+		// Size Matters
+		private void InitSizes()
+		{
+			if (this.pl_main == null)
+				return;
+			if (this.lv_cardlist == null)
+				return;
+
+			int l = this.lv_cardlist.Left;
+			int t = this.lv_cardlist.Top;
+
+			FixHeight(this.lv_cardlist, t);
+			FixHeight(this.tb_cardtext, t);
+			FixHeight(this.tb_edittext, t);
+
+			FixWidth(this.lb_types, l);
+			FixWidth(this.pl_cardtype, l);
+			FixWidth(this.lb_categorys, l);
+			FixWidth(this.pl_category, l);
+			FixWidth(this.lb_tiptexts, l);
+			FixWidth(this.lb_scripttext, l);
+			FixWidth(this.tb_edittext, l);
+		}
+		private void FixWidth(System.Windows.Forms.Control o, int rightMargin)
+		{
+			if (o == null) return;
+			
+			int w = this.pl_main.ClientSize.Width - (o.Left + rightMargin);
+			if (w > 0) o.Width = w;
+
+		}
+		private void FixHeight(System.Windows.Forms.Control o, int bottomMargin)
+		{
+			if (o == null) return;
+			
+			int h = this.pl_main.ClientSize.Height - (o.Top + bottomMargin);
+			if (h > 0) o.Height = h;
+
+		}
 	}
 }
