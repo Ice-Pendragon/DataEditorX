@@ -235,5 +235,13 @@
   <ItemGroup>
     <Folder Include="Core\TCGEditor" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="data\language_korean.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\cardinfo_korean.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
